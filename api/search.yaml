@@ -1,0 +1,87 @@
+openapi: 3.0.1
+info:
+  title: Travel API
+  description: A plugin that allows the user to find available flight seats.
+  version: 'v1'
+servers:
+  - url: http://localhost:3333
+paths:
+  /search:
+    get:
+      operationId: getAvailableSeatFlight
+      summary: Get the Available flights
+      parameters:
+      - in: query
+        name: departure_code
+        schema:
+          type: string
+        description: Departure code of flight. The code using IATA code
+        example: CGK
+      - in: query
+        name: departure_date
+        schema:
+          type: string
+        description: Departure date of flight. Format using YYYY-MM-DD
+        example: 2023-03-29
+      - in: query
+        name: sort_by_price
+        schema:
+          type: string
+        description: Sorting the response by price. Ascending (asc) or Descending (desc). By default the price will return as asc
+        example: asc
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getAvailFlights'
+components:
+  schemas:
+    getAvailFlights:
+      type: array
+      items:
+          type: object
+          required:
+            - airline_code
+            - airline_name
+            - departure_code
+            - departure_name
+            - departure_date
+            - arrival_code
+            - arrival_name
+            - arrival_date_eta
+            - duration_eta_in_minutes
+            - price
+          properties:
+              airline_code: 
+                type: string
+                example: GIA
+              airline_name: 
+                type: string
+                example: Garuda Indonesia
+              departure_code: 
+                type: string
+                example: CGK
+              departure_name: 
+                type: string
+                example: Soekarno Hatta
+              departure_date: 
+                type: string
+                example: 2023-03-28
+              arrival_code: 
+                type: string
+                example: HND
+              arrival_name: 
+                type: string
+                example: Haneda
+              arrival_date_eta: 
+                type: string
+                example: 2023-03-29
+              duration_eta_in_minutes:
+                type: string
+                example: 720
+              price:
+                type: number
+                example: 8023000
+         

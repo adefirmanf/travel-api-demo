@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Travel API Plugin",
+    "name_for_model": "travel",
+    "description_for_human": "Plugin for searching available seat for your flight.",
+    "description_for_model": "Plugin for searching available seat for your flight.",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "http://localhost:3333/openapi.yaml",
+      "is_user_authenticated": false
+    },
+    "logo_url": "http://localhost:3333/logo.png",
+    "contact_email": "support@example.com",
+    "legal_info_url": "http://www.example.com/legal"
+  }
