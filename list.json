@@ -1,0 +1,72 @@
+[{
+    "airline_code" : "GIA",
+    "airline_name" : "Garuda Indonesia",
+    "departure_code" : "CGK",
+    "departure_name" : "Soekarno Hatta",
+    "departure_date" : "2023-03-28",
+    "arrival_code" : "HND",
+    "arrival_name" : "Haneda",
+    "arrival_date_eta" : "2023-03-29",
+    "duration_eta_in_minutes" : "720",
+    "price": "8023000"
+},
+{
+    "airline_code" : "GIA",
+    "airline_name" : "Garuda Indonesia",
+    "departure_code" : "CGK",
+    "departure_name" : "Soekarno Hatta",
+    "departure_date" : "2023-03-29",
+    "arrival_code" : "HND",
+    "arrival_name" : "Haneda",
+    "arrival_date_eta" : "2023-03-30",
+    "duration_eta_in_minutes" : "720",
+    "price": "8025000"
+},
+{
+    "airline_code" : "GIA",
+    "airline_name" : "Garuda Indonesia",
+    "departure_code" : "CGK",
+    "departure_name" : "Soekarno Hatta",
+    "departure_date" : "2023-03-30",
+    "arrival_code" : "HND",
+    "arrival_name" : "Haneda",
+    "arrival_date_eta" : "2023-03-31",
+    "duration_eta_in_minutes" : "720",
+    "price": "7023000"
+},
+{
+    "airline_code" : "JAL",
+    "airline_name" : "Japan Airlines",
+    "departure_code" : "CGK",
+    "departure_name" : "Soekarno Hatta",
+    "departure_date" : "2023-03-28",
+    "arrival_code" : "HND",
+    "arrival_name" : "Haneda",
+    "arrival_date_eta" : "2023-03-29",
+    "duration_eta_in_minutes" : "720",
+    "price": "9023000"
+},
+{
+    "airline_code" : "JAL",
+    "airline_name" : "Japan Airlines",
+    "departure_code" : "CGK",
+    "departure_name" : "Soekarno Hatta",
+    "departure_date" : "2023-03-29",
+    "arrival_code" : "HND",
+    "arrival_name" : "Haneda",
+    "arrival_date_eta" : "2023-03-30",
+    "duration_eta_in_minutes" : "720",
+    "price": "9033000"
+},
+{
+    "airline_code" : "JAL",
+    "airline_name" : "Japan Airlines",
+    "departure_code" : "CGK",
+    "departure_name" : "Soekarno Hatta",
+    "departure_date" : "2023-03-30",
+    "arrival_code" : "HND",
+    "arrival_name" : "Haneda",
+    "arrival_date_eta" : "2023-03-31",
+    "duration_eta_in_minutes" : "720",
+    "price": "9073000"
+}]
