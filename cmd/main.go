@@ -19,9 +19,11 @@ func main() {
 	app := search.NewSearch(inmem.NewSearch())
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
+
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("welcome"))
 	})
+
 	r.Get("/.well-known/ai-plugin.json", func(w http.ResponseWriter, r *http.Request) {
 		host := r.Header.Get("Host")
 		data, err := ioutil.ReadFile("ai-plugin.json")
@@ -34,6 +36,7 @@ func main() {
 		w.Header().Set("Content-Type", "application/json")
 		w.Write([]byte(text))
 	})
+
 	r.Get("/open-api.yaml", func(w http.ResponseWriter, r *http.Request) {
 		host := r.Header.Get("Host")
 		data, err := ioutil.ReadFile("api/search.yaml")
