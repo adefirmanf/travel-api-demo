@@ -2,8 +2,10 @@ package main
 
 import (
 	"encoding/json"
+	"io/ioutil"
 	"log"
 	"net/http"
+	"strings"
 
 	"github.com/adefirmanf/travel/internal/search"
 	"github.com/adefirmanf/travel/internal/search/inmem"
@@ -19,6 +21,30 @@ func main() {
 	r.Use(middleware.Logger)
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("welcome"))
+	})
+	r.Get("/.well-known/ai-plugin.json", func(w http.ResponseWriter, r *http.Request) {
+		host := r.Header.Get("Host")
+		data, err := ioutil.ReadFile("ai-plugin.json")
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		text := string(data)
+		text = strings.Replace(text, "PLUGIN_HOSTNAME", "https://"+host, 1)
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(text))
+	})
+	r.Get("/open-api.yaml", func(w http.ResponseWriter, r *http.Request) {
+		host := r.Header.Get("Host")
+		data, err := ioutil.ReadFile("api/search.yaml")
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		text := string(data)
+		text = strings.Replace(text, "PLUGIN_HOSTNAME", "https://"+host, 1)
+		w.Header().Set("Content-Type", "text/yaml")
+		w.Write([]byte(text))
 	})
 	// search?detination - required | departure_date - optional
 	r.Get("/search", func(w http.ResponseWriter, r *http.Request) {
